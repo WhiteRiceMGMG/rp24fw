@@ -43,6 +43,7 @@ ID tk_cre_tsk( const T_CTSK *pk_ctsk )
     INT  i;      /* TCB探索用 */
 
     /* 未許可属性が混ざっていないか確認．TA_RNG3でリング属性をマスク */
+    /* 保護レベルはどれでも可能だが，それ以外はHLNGとUSERBUFのみ */
     if((pk_ctsk -> tskatr & ~TA_RNG3) != (TA_HLNG|TA_USERBUF))
     {
         return E_RSATR;
