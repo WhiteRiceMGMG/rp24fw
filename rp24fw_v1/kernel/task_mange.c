@@ -11,6 +11,9 @@
 #include <rp24knl.h>
 #include <knldef.h> 
 
+/* #include <apidef.h> */ /* T_CTSK, TA_HLNG, TA_USERBUF*/
+/* #include <knldef.h> */ /* TCB */
+
 /********************************************************/
 /* 内部公開マクロ                                       */
 /********************************************************/
@@ -49,7 +52,7 @@ ID tk_cre_tsk( const T_CTSK *pk_ctsk )
         return E_RSATR;
     }
 
-    /* 優先度チェック */
+    /* 優先度が0以下，または最大値より大きい場合はエラー */
     if(pk_ctsk -> itskpri <= 0 || pk_ctsk -> itskpri > CNF_MAX_TSKPRI)
     {
         return E_PAR;
@@ -75,6 +78,7 @@ ID tk_cre_tsk( const T_CTSK *pk_ctsk )
     /* TCBの空き探索で該当した場合 */
     if(i < CNF_MAX_TSKID)
     {
+        /* T_CTSKはテンポラリのためTCBへ転写する */
         tcb_tbl[i].state   = TS_DORMANT;
         tcb_tbl[i].pre     = NULL;
         tcb_tbl[i].next    = NULL;
