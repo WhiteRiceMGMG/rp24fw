@@ -83,6 +83,7 @@ void tqueue_remove_top( TCB **queue )
 /********************************************************/
 void tqueue_remove_entry( TCB **queue, TCB *tcb )
 {
+    /* 削除対象が先頭かどうかチェック */
     if(*queue == tcb)
     {
         tqueue_remove_top(queue);
@@ -90,13 +91,18 @@ void tqueue_remove_entry( TCB **queue, TCB *tcb )
     }
     else
     {
+        /* 前の要素のnextを自分のnextに飛ばす */
         (tcb -> pre) -> next = tcb -> next;
+
+        /* 自要素の次がある場合 */
         if(tcb -> next != NULL)
         {
+            /* 次の要素のpreを自分のpreに付け替える */
             (tcb -> next) -> pre = tcb -> pre;
         }
         else
         {
+            /* 自要素が末尾なら先頭の末尾ポインタ更新 */
             (*queue) -> pre = tcb -> pre;
         }
     }
