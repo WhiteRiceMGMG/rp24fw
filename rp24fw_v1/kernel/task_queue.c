@@ -24,7 +24,9 @@
 /********************************************************/
 void tqueue_add_entry( TCB **queue, TCB *tcb )
 {
-    TCB *queue_end;
+    TCB *queue_end;  /* 現在キューの末尾を示す */
+    
+    /* キューが空のとき */
     if(*queue == NULL)
     {
         *queue     = tcb;
@@ -32,11 +34,15 @@ void tqueue_add_entry( TCB **queue, TCB *tcb )
     }
     else
     {
+        /* 末尾TCBをqueue_endに引き当て */
         queue_end         = (*queue) -> pre;
         queue_end -> next = tcb;
+        /* 末尾の次に新しいtcbを接続する */
         tcb -> pre        = queue_end;
+        /* 新しいtcbの前は元の末尾にする */
         (*queue) -> pre   = tcb;
     }
+    /* 新しいtcbは必ず末尾のためnextはNULL */
     tcb -> next = NULL;
 }
 
@@ -49,14 +55,21 @@ void tqueue_add_entry( TCB **queue, TCB *tcb )
 void tqueue_remove_top( TCB **queue )
 {
     TCB *top;
+
+    /* 空かどうかチェックし，該当の場合は何もせず終了 */
     if(*queue == NULL)
     {
         return;
     }
     top = *queue;
+    
+    /* キューの先頭を一つ後ろへずらす */
     *queue = top -> next;
+
+    /* 要素がある場合 */
     if(*queue != NULL)
     {
+        /* 新しい先頭にも正しい末尾ポインタを渡す． */
         (*queue) -> pre = top -> pre;
     }
 }
