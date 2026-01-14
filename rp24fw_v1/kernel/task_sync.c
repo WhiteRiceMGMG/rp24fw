@@ -143,7 +143,9 @@ ER tk_wup_tsk( ID tskid )
         
         /* スケジューラを起動する */
         scheduler();
-    } else if(tcb->state == TS_READY 
+    } 
+    /* タスクが寝ていない場合起床要求を貯める． */
+    else if(tcb->state == TS_READY 
             ||tcb->state == TS_WAIT) 
     {
         tcb->wupcnt++;
