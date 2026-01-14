@@ -19,7 +19,7 @@
 /* 関数   | void tqueue_add_enrty( TCB **queue,         */
 /*        | TCB *tcb )                                  */
 /* 説明   | エントリ追加関数                            */
-/* 引数   | TCB **queue, TCB *tcb                       */
+/* 引数   | TCB **queue(アドレス保持の変数), TCB *tcb   */
 /* 戻り値 | semid                                       */
 /********************************************************/
 void tqueue_add_entry( TCB **queue, TCB *tcb )
