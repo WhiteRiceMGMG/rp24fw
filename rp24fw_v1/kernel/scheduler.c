@@ -1,7 +1,7 @@
 /* scheduler.c                                          */
 /********************************************************/
 /* object    | スケジューラー                           */
-/* abstract  | スケジューラー定義                       */
+/* abstract  | 次実行のタスクの決定                     */
 /* edit his  | 2025/12/22 テンプレート作成              */
 /*           |                                          */
 /********************************************************/
@@ -29,6 +29,7 @@ TCB *cur_task;
 /* 次のタスク */
 TCB *sche_task;
 
+/* ディスパッチ禁止フラグ */
 u4 disp_running;
 
 /********************************************************/
@@ -49,6 +50,7 @@ void scheduler( void )
 {
     INT i;
 
+    /* 優先度が最も高いREADYタスクを探す */
     for(i = 0; i < CNF_MAX_TSKPRI; i++)
     {
         if(ready_queue[i] != NULL)
@@ -57,15 +59,19 @@ void scheduler( void )
         }
     }
 
+    /* タスクを次の候補にする */
     if(i < CNF_MAX_TSKPRI)
     {
         sche_task = ready_queue[i];
     }
+    /* 実行可能タスクなし */
     else
     {
         sche_task = NULL;
     }
 
+    /* 同じタスクでなく，ディスパッチ禁止中でない場合 */
+    /* 実際にタスクを切り替える */
     if((sche_task != cur_task)
       &&(!disp_running))
     {
