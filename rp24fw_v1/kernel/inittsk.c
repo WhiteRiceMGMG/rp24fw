@@ -1,7 +1,7 @@
 /* inittsk.c                                            */
 /********************************************************/
 /* object    | 初期タスク                               */
-/* abstract  | 初期タスク定義                           */
+/* abstract  | 初期タスクを起動する                     */
 /* edit his  | 2025/12/21 新規作成                      */
 /*           |                                          */
 /********************************************************/
@@ -15,16 +15,31 @@
 /********************************************************/
 /* 外部公開定義                                         */
 /********************************************************/
+/* 初期タスクのエントリ関数宣言 */
 void initsk( INT stacd, void *exinf);
+
+/* 初期タスク専用スタック */
 u4 tskstk_ini[256 / sizeof(u4)];
+
+/* 初期タスクID */
 ID tskid_ini;
 
+/* タスク生成情報構造体 */
 T_CTSK ctsk_ini = 
 {
+    /* 属性:高級言語，実行保護レベル0，ユーザ定義スタック */
     .tskatr     = TA_HLNG | TA_RNG0 | TA_USERBUF,
+
+    /* タスクエントリ */
     .task       = initsk,
+
+    /* 初期優先度 */
     .itskpri    = 1,
+
+    /* スタックサイズ */
     .stksz      = sizeof(tskstk_ini),
+    
+    /* スタック先頭アドレス */
     .bufptr     = tskstk_ini
 };
 
@@ -35,15 +50,19 @@ T_CTSK ctsk_ini =
 /********************************************************/
 /* 関数   | void initsk ( INT stacd, void *exinf )      */
 /* 説明   | シリアル通信の初期化                        */
-/* 引数   | INT stacd, void *exinf                      */
+/* 引数   | INT stacd(起動コード), void *exinf(拡張情報)*/
 /* 戻り値 | なし                                        */
 /********************************************************/
 void initsk( INT stacd, void *exinf )
 {
+    /* シリアル/UART初期化 */
     tm_com_init();
     tm_putstring("Start Kernel");
 
+    /* ユーザーアプリ起動 */
     usermain();
+
+    /* 初期タスク終了 */
     tk_ext_tsk();
 }
 
@@ -55,7 +74,11 @@ void initsk( INT stacd, void *exinf )
 /********************************************************/
 int main( void )
 {
+    /* 初期タスク生成 */
     tskid_ini = tk_cre_tsk(&ctsk_ini);
+
+    /* 初期タスク起動 */
+    /* 次のスケジューリングで実行対象に */
     tk_sta_tsk(tskid_ini, 0);
 
     while(1);
