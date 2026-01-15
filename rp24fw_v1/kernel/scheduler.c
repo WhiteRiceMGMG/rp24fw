@@ -20,8 +20,13 @@
 /* 外部公開変数                                         */
 /********************************************************/
 /* u1 u1g_sample_val                                    */
+/* 優先度ごとのReadyキューの配列 */
 TCB *ready_queue[CNF_MAX_TSKPRI];
+
+/* 資源占用中のタスク */
 TCB *cur_task;
+
+/* 次のタスク */
 TCB *sche_task;
 
 u4 disp_running;
