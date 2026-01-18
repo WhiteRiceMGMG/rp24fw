@@ -88,7 +88,7 @@ ER tk_slp_tsk( TMO tmout )
         
         /* 待ち時間を設定する */
         cur_task -> waitim  = (tmout==TMO_FEVR)?tmout:(tmout+TIMER_PERIOD); 
-        
+
         /* エラー返却先登録 */
         cur_task -> waierr = &err;
 
