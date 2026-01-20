@@ -7,9 +7,16 @@
 
 typedef struct
 {
-    btnDriver Btn;
-    ledDriver Led;
-}rp24Driver;
+    btn_driver firstbtn;
+    btn_driver secondbtn;
+    btn_driver thirdbtn;
+    btn_driver fourthbtn;
+    
+    led_driver firstled;
+    led_driver secondled;
+    led_driver thirdled;
+    led_driver fourthled;
+}rp24_driver;
 
-extern rp24Driver Rp24;
+extern rp24_driver rp24;
 #endif
