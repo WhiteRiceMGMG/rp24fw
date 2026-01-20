@@ -24,7 +24,25 @@ rp24Driver rp24 =
 
     .firstled =
     {
-        .On = Led_On,
-        .Off = Led_Off
+        .On  = u1g_firstled_on,
+        .Off = u1g_firstled_off
+    },
+
+    .secondled =
+    {
+        .On  = u1g_secondled_on,
+        .Off = u1g_secondled_off
+    },
+
+    .thirdled =
+    {
+        .On  = u1g_thirdled_on,
+        .Off = u1g_thirdled_off
+    },
+
+    .fourthled =
+    {
+        .On  = u1g_fourthled_on,
+        .Off = u1g_fourthled_off
     }
 };
