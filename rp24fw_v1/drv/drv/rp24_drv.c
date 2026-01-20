@@ -24,5 +24,5 @@ typedef struct
     ledDriver Led;
 }rp24Driver;
 
-extern rp24Driver;
+extern rp24Driver Rp24;
 #endif
