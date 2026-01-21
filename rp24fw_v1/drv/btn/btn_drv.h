@@ -21,6 +21,11 @@ typedef struct
     u1 (*push)(void);
 }btn_driver;
 
+#define FIRST_BTN_GPIO  (18)
+#define SECOND_BTN_GPIO (19)
+#define THIRD_BTN_GPIO  (20)
+#define FOURTH_BTN_GPIO (21)
+
 /********************************************************/
 /* 外部公開関数宣言                                     */
 /********************************************************/
