@@ -4,22 +4,22 @@ rp24_driver rp24 =
 {
     .firstbtn =
     {
-        .push = u1g_firstbtn_conf
+        .push = u1g_firstbtn_get
     },
 
     .secondbtn =
     {
-        .push = u1g_secondbtn_conf
+        .push = u1g_secondbtn_get
     },
 
     .thirdbtn =
     {
-        .push = u1g_thirdbtn_conf
+        .push = u1g_thirdbtn_get
     },
 
     .fourthbtn =
     {
-        .push = u1g_fourthbtn_conf
+        .push = u1g_fourthbtn_get
     },
 
     .firstled =
