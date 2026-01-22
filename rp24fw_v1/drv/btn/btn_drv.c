@@ -20,10 +20,7 @@
 /* 引数   | なし                                        */
 /* 戻り値 | なし                                        */
 /********************************************************/
-u1 u1g_firstbtn_get( void )
-{
-    return BTN_READ(FIRST_BTN_GPIO);
-}
+u1 u1g_firstbtn_get( void );
 
 /********************************************************/
 /* 関数   | u1g_secondbtn_get( void )                   */
@@ -31,10 +28,7 @@ u1 u1g_firstbtn_get( void )
 /* 引数   | なし                                        */
 /* 戻り値 | なし                                        */
 /********************************************************/
-u1 u1g_secondbtn_get( void )
-{
-    return BTN_READ(SECOND_BTN_GPIO);
-}
+u1 u1g_secondbtn_get( void );
 
 /********************************************************/
 /* 関数   | u1g_thirdbtn_get( void )                    */
@@ -42,10 +36,7 @@ u1 u1g_secondbtn_get( void )
 /* 引数   | なし                                        */
 /* 戻り値 | なし                                        */
 /********************************************************/
-u1 u1g_thirdbtn_get( void )
-{
-    return BTN_READ(THIRD_BTN_GPIO);
-}
+u1 u1g_thirdbtn_get( void );
 
 /********************************************************/
 /* 関数   | u1g_fourthbtn_get( void )                   */
@@ -53,12 +44,7 @@ u1 u1g_thirdbtn_get( void )
 /* 引数   | なし                                        */
 /* 戻り値 | なし                                        */
 /********************************************************/
-u1 u1g_fourthbtn_get( void )
-{
-    return BTN_READ(FOURTH_BTN_GPIO);
-}
-
-
+u1 u1g_fourthbtn_get( void );
 
 /********************************************************/
 /* EOF                                                  */
