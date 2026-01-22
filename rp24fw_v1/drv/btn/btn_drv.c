@@ -22,7 +22,7 @@
 /********************************************************/
 u1 u1g_firstbtn_get( void )
 {
-    return (in_w(GPIO_IN) & (1 << 18)) != 0;
+    return BTN_READ(FIRST_BTN_GPIO);
 }
 
 /********************************************************/
@@ -33,7 +33,7 @@ u1 u1g_firstbtn_get( void )
 /********************************************************/
 u1 u1g_secondbtn_get( void )
 {
-    return (in_w(GPIO_IN) & (1 << 18)) != 0;
+    return BTN_READ(SECOND_BTN_GPIO);
 }
 
 /********************************************************/
@@ -44,7 +44,7 @@ u1 u1g_secondbtn_get( void )
 /********************************************************/
 u1 u1g_thirdbtn_get( void )
 {
-    return (in_w(GPIO_IN) & (1 << 18)) != 0;
+    return BTN_READ(THIRD_BTN_GPIO);
 }
 
 /********************************************************/
@@ -55,7 +55,7 @@ u1 u1g_thirdbtn_get( void )
 /********************************************************/
 u1 u1g_fourthbtn_get( void )
 {
-    return (in_w(GPIO_IN) & (1 << 18)) != 0;
+    return BTN_READ(FOURTH_BTN_GPIO);
 }
 
 

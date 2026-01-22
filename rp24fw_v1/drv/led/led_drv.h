@@ -22,6 +22,18 @@ typedef struct
     void (*off)(void);
 } led_driver;
 
+/* *_gpio.hで定義済のためコメントアウト */
+/* #define FIRST_LED_GPIO   (18) */
+/* #define SECOND_LED_GPIO  (19) */ 
+/* #define THIRD_LED_GPIO   (20) */
+/* #define FOURTH_LED_GPIO  (21) */
+
+/* #define GPIO_BIT(n)      (1U << (n)) */
+
+/* #define LED_ON(gpio)     out_w(GPIO_OUT_SET, GPIO_BIT(gpio)) */
+/* #define LED_OFF(gpio)    out_w(GPIO_OUT_CLR, GPIO_BIT(gpio)) */
+
+
 /********************************************************/
 /* 外部公開関数宣言                                     */
 /********************************************************/
@@ -31,10 +43,7 @@ typedef struct
 /* 引数   | なし                                        */
 /* 戻り値 | なし                                        */
 /********************************************************/
-u1 u1g_firstled_on( void )
-{
-    out_w(GPIO_OUT_SET, (1 << 18));
-}
+u1 u1g_firstled_on( void );
 
 /********************************************************/
 /* 関数   | u1g_firstled_off( void )                    */
@@ -42,10 +51,7 @@ u1 u1g_firstled_on( void )
 /* 引数   | なし                                        */
 /* 戻り値 | なし                                        */
 /********************************************************/
-u1 u1g_firstled_off( void )
-{
-    out_w(GPIO_OUT_CLR, (1 << 18));
-}
+u1 u1g_firstled_off( void );
 
 /********************************************************/
 /* 関数   | u1g_secondled_on( void )                    */
@@ -53,10 +59,7 @@ u1 u1g_firstled_off( void )
 /* 引数   | なし                                        */
 /* 戻り値 | なし                                        */
 /********************************************************/
-u1 u1g_secondled_on( void )
-{
-    out_w(GPIO_OUT_SET, (1 << 18));
-}
+u1 u1g_secondled_on( void );
 
 /********************************************************/
 /* 関数   | u1g_secondled_off( void )                   */
@@ -64,10 +67,7 @@ u1 u1g_secondled_on( void )
 /* 引数   | なし                                        */
 /* 戻り値 | なし                                        */
 /********************************************************/
-u1 u1g_secondled_off( void )
-{
-    out_w(GPIO_OUT_CLR, (1 << 18));
-}
+u1 u1g_secondled_off( void );
 
 /********************************************************/
 /* 関数   | u1g_thirdled_on( void )                     */
@@ -75,10 +75,7 @@ u1 u1g_secondled_off( void )
 /* 引数   | なし                                        */
 /* 戻り値 | なし                                        */
 /********************************************************/
-u1 u1g_thirdled_on( void )
-{
-    out_w(GPIO_OUT_SET, (1 << 18));
-}
+u1 u1g_thirdled_on( void );
 
 /********************************************************/
 /* 関数   | u1g_thirdled_off( void )                    */
@@ -86,10 +83,7 @@ u1 u1g_thirdled_on( void )
 /* 引数   | なし                                        */
 /* 戻り値 | なし                                        */
 /********************************************************/
-u1 u1g_thirdled_off( void )
-{
-    out_w(GPIO_OUT_CLR, (1 << 18));
-}
+u1 u1g_thirdled_off( void );
 
 /********************************************************/
 /* 関数   | u1g_fourthled_on( void )                    */
@@ -97,10 +91,7 @@ u1 u1g_thirdled_off( void )
 /* 引数   | なし                                        */
 /* 戻り値 | なし                                        */
 /********************************************************/
-u1 u1g_fourthled_on( void )
-{
-    out_w(GPIO_OUT_SET, (1 << 18));
-}
+u1 u1g_fourthled_on( void );
 
 /********************************************************/
 /* 関数   | u1g_fourthled_off( void )                   */
@@ -108,11 +99,7 @@ u1 u1g_fourthled_on( void )
 /* 引数   | なし                                        */
 /* 戻り値 | なし                                        */
 /********************************************************/
-u1 u1g_fourthled_off( void )
-{
-    out_w(GPIO_OUT_CLR, (1 << 18));
-}
-
+u1 u1g_fourthled_off( void );
 
 #endif
 /********************************************************/
