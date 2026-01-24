@@ -13,27 +13,6 @@
 /********************************************************/
 
 
-
-
-
-
-
-
-
-
-
-
-
-/* SysTick レジスタ */
-#define SYST_CSR                (0xE000E010)
-#define SYST_RVR                (0xE000E014)
-#define SYST_CVR                (0xE000E018)
-
-#define SYST_CSR_COUNTFLAG      (1<<16)
-#define SYST_CSR_CLKSOURCE      (1<<2)
-#define SYST_CSR_TICKINT        (1<<1)
-#define SYST_CSR_ENABLE	        (1<<0)
-
 /* クロック周波数 */
 #define	CLOCK_XOSC              (12000000UL)
 #define	CLOCK_REF               (CLOCK_XOSC)
