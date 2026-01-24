@@ -17,33 +17,9 @@
 
 
 
-/* Crystal Oscillator(XOSC) */
-#define XOSC_BASE               0x40024000
-#define XOSC_CTRL               (XOSC_BASE+0x00)
-#define XOSC_STATUS             (XOSC_BASE+0x04)
-#define XOSC_STARTUP            (XOSC_BASE+0x0C)
 
-#define	XOSC_CTRL_ENABLE        (0x00FAB000)
-#define	XOSC_CTRL_DISABLE       (0x00D1E000)
-#define	XOSC_CTRL_FRANG_1_15MHZ (0x00000AA0)
 
-#define	XOSC_STATUS_STABLE      (0x80000000)
 
-/* PLL */
-#define PLL_SYS_BASE            (0x40028000)
-#define PLL_USB_BASE            (0x4002C000)
-
-#define PLL_CS                  (0x00)
-#define	PLL_PWR                 (0x04)
-#define	PLL_FBDIV_INT           (0x08)
-#define	PLL_PRIM                (0x0C)
-
-#define	PLL_CS_LOCK             (1<<31)
-#define	PLL_PWR_PD              (1<<0)
-#define	PLL_PWR_VCOPD           (1<<5)
-#define	PLL_PWR_POSTDIVPD       (1<<3)
-#define PLL_PRIM_POSTDIV1_LSB   (16)
-#define PLL_PRIM_POSTDIV2_LSB   (12)
 
 /* UART */
 #define UART0_BASE              0x40034000
