@@ -21,32 +21,8 @@
 
 
 
-/* UART */
-#define UART0_BASE              0x40034000
-#define UART1_BASE              0x40038000
 
-#define UARTx_DR                (0x000)
-#define UARTx_FR                (0x018)
-#define UARTx_IBRD              (0x024)
-#define UARTx_FBRD              (0x028)
-#define UARTx_LCR_H             (0x02C)
-#define UARTx_CR                (0x030)
 
-#define UART_CR_RXE             (1<<9)
-#define UART_CR_TXE             (1<<8)
-#define UART_CR_EN              (1<<0)
-#define UART_FR_TXFF            (1<<5)
-
-/* IOPORT レジスタ */
-#define SIO_BASE                0xD0000000
-#define	GPIO_IN                 (SIO_BASE+0x04)
-#define GPIO_OUT                (SIO_BASE+0x10)
-#define GPIO_OUT_SET            (SIO_BASE+0x14)
-#define GPIO_OUT_CLR            (SIO_BASE+0x18)
-#define GPIO_OUT_XOR            (SIO_BASE+0x1C)
-#define GPIO_OE_SET             (SIO_BASE+0x24)
-#define GPIO_OE_CLR             (SIO_BASE+0x28)
-#define GPIO_OE_XOR             (SIO_BASE+0x2C)
 
 /* SysTick レジスタ */
 #define SYST_CSR                (0xE000E010)
