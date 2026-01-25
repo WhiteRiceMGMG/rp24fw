@@ -11,16 +11,16 @@
 /********************************************************/
 /* インクルード                                         */
 /********************************************************/
-#include "./defpart/base_adr.h"
-#include "./defpart/clock_reg.h"
-#include "./defpart/gpio_reg.h"
-#include "./defpart/ioport_reg.h"
-#include "./defpart/nivc_reg.h"
-#include "./defpart/pll_reg.h"
-#include "./defpart/reset_reg.h"
-#include "./defpart/systick_reg.h"
-#include "./defpart/uart_reg.h"
-#include "./defpart/xocs_reg.h"
+#include "../../inc/   /arch/base_adr.h"
+#include "../../inc/   /arch/clock_reg.h"
+#include "../../inc/   /arch/gpio_reg.h"
+#include "../../inc/   /arch/ioport_reg.h"
+#include "../../inc/   /arch/nivc_reg.h"
+#include "../../inc/   /arch/pll_reg.h"
+#include "../../inc/   /arch/reset_reg.h"
+#include "../../inc/   /arch/systick_reg.h"
+#include "../../inc/   /arch/uart_reg.h"
+#include "../../inc/   /arch/xocs_reg.h"
 
 /********************************************************/
 /* レジスタ定義マクロ                                   */
