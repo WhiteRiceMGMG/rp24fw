@@ -18,20 +18,11 @@
 
 
 extern void Reset_Handler( void );    /*リセットハンドラ*/
-extern void dispatch_entry( void );   /*ディスパッチャ*/
-extern void systimer_handler( void ); /*割り込みハンドラ*/
-
-#define SCB_ICSR    0xE000ED04 /* 割り込み制御レジスタ */
-#define ICSR_PENDSVSET (1 << 28) /* PendSV pedingヒット */
-
-static inline void dispatch( void )
-{
-    out_w( SCB_ICSR, ICSR_PENDSVSET ); /* pendSV発生 */
-}
+e
 
 
-/* タスクコンテキスト生成 */
-extern void *make_context( u4 *sp, UINT ssize, void (*fp)()); 
+
+
 
 
 
