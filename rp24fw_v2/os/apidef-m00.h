@@ -29,34 +29,14 @@
 
 
 
-/* イベントフラグ生成情報 */
-typedef struct t_cflg
-{
-    ATR    flgatr;  /* イベントフラグ属性 */
-    UINT   iflgptn; /* イベントフラグ初期値 */
-} T_CFLG;
-
-/* イベントフラグAPI */
-ID tk_cre_flg( const T_CFLG *pk_cflg );
-ER tk_set_flg( ID flgid, UINT setptn );
-ER tk_clr_flg( ID flgid, UINT clrptn );
 
 
 
-ER tk_wai_flg( ID flgid, UINT waiptn, UINT wfmode, UINT *p_flgptn, TMO tmout );
 
-/* セマフォ生成情報 */
-typedef struct t_csem
-{
-    ATR    sematr;  /* セマフォ属性 */
-    INT    isemcnt; /* セマフォ資源数の初期値 */
-    INT    maxsem;  /* セマフォ資源数最大値 */
-} T_CSEM;
 
-/* セマフォAPI */
-ID tk_cre_sem( const T_CSEM *pk_csem );
-ER tk_sig_sem( ID semid, INT cnt );
-ER tk_wai_sem( ID semid, INT cnt, TMO tmout );
+
+
+
 
 #endif
 
