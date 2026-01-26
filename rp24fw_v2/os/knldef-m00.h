@@ -16,11 +16,6 @@
  
 
 
-extern TCB tcb_tbl[];      /* TCBテーブル */
-extern TCB *ready_queue[]; /* タスクの実行待ち行列 */
-extern TCB *cur_task;      /* 実行中のタスク */
-extern TCB *sche_task;     /* 次に実行するタスク */
-extern TCB *wait_queue;    /* タスクの時間待ち行列 */
 
 extern void Reset_Handler( void );    /*リセットハンドラ*/
 extern void dispatch_entry( void );   /*ディスパッチャ*/
@@ -34,7 +29,7 @@ static inline void dispatch( void )
     out_w( SCB_ICSR, ICSR_PENDSVSET ); /* pendSV発生 */
 }
 
-extern void scheduler( void ); /* スケジューラ */
+
 /* タスクコンテキスト生成 */
 extern void *make_context( u4 *sp, UINT ssize, void (*fp)()); 
 
