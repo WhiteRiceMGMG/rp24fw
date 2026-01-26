@@ -12,24 +12,7 @@
 /********************************************************/
 /* 外部公開定義                                         */
 /********************************************************/
-/* タスク状態 */
-typedef enum
-{
-    TS_NONEXIST = 0, /* 未登録 */
-    TS_READY    = 1, /* 実行状態or実行可能状態 */
-    TS_WAIT     = 2, /* 待ち状態 */
-    TS_DORMANT  = 8  /* 休止状態 */
-} TSTAT;
 
-/* タスクの待ち要因 */
-typedef enum
-{
-    TWFCT_NON = 0, /* なし */
-    TWFCT_DLY = 1, /* tk_dly_tskによる時間待ち */
-    TWFCT_SLP = 2, /* tk_slp_tskによる起床待ち */
-    TWFCT_FLG = 3, /* tk_wai_flgによるフラグ待ち */
-    TWFCT_SEM = 4  /* tk_wai_semによる資源待ち */
-} TWFCT;
 
 /* TCB定義 */
 typedef struct st_tcb
@@ -87,12 +70,7 @@ extern void tqueue_remove_top( TCB **queue );
 /* エントリ削除関数 */
 extern void tqueue_remove_entry( TCB **queue, TCB *tcb );
 
-/* カーネルオブジェクト状態 */
-typedef enum
-{
-    KS_NONEXIST = 0, /* 未登録 */
-    KS_EXIST    = 1  /* 登録済 */
-} KSSTAT;
+
 
 /* イベントフラグ管理情報 */
 typedef struct st_flgcb
