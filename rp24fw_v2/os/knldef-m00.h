@@ -13,33 +13,8 @@
 /* 外部公開定義                                         */
 /********************************************************/
 
+ 
 
-/* TCB定義 */
-typedef struct st_tcb
-{
-    void *context; /* コンテキスト情報へのポインタ */
-    
-    struct st_tcb *pre;  /* 一つ前の要素 */
-    struct st_tcb *next; /* 一つ後の要素 */
-    
-    TSTAT  state;     /* タスク状態 */
-    FP     tskadr;    /* 実行開始アドレス */
-    PRI    itskpri;   /* 実行優先度 */
-    void   *stkadr;   /* スタックのアドレス */
-    SZ     stksz;     /* スタックのサイズ */
-    INT    wupcnt;    /* 起床要求数 */
-
-    TWFCT  waifct;    /* 待ち要因 */
-    ID     waiobj;    /* 待ち対象オブジェクト */
-    RELTIM waitim;    /* 待ち時間 */
-    ER     *waierr;   /* 待ち解除のエラーコード */
-
-    UINT   waiptn;    /* 待ちフラグパターン */
-    UINT   wfmode;    /* 待ちモード */
-    UINT   *p_flgptn; /* 待ち解除時のフラグパターン */
-
-    INT    waisem;    /* セマフォ資源要求数 */
-} TCB;
 
 extern TCB tcb_tbl[];      /* TCBテーブル */
 extern TCB *ready_queue[]; /* タスクの実行待ち行列 */
@@ -63,12 +38,7 @@ extern void scheduler( void ); /* スケジューラ */
 /* タスクコンテキスト生成 */
 extern void *make_context( u4 *sp, UINT ssize, void (*fp)()); 
 
-/* エントリ追加関数 */
-extern void tqueue_add_entry( TCB **queue, TCB *tcb );
-/* 先頭エントリ削除関数 */
-extern void tqueue_remove_top( TCB **queue );
-/* エントリ削除関数 */
-extern void tqueue_remove_entry( TCB **queue, TCB *tcb );
+
 
 
 
