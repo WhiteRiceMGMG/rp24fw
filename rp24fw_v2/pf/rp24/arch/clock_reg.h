@@ -3,7 +3,7 @@
 /* object    | clockレジスタアドレス                    */
 /* abstract  | rp24専用clockアドレス                    */
 /* edit his  | 2026/01/24 新規作成                      */
-/*           |                                          */
+/*           | reset_hdrで主に使用                      */
 /********************************************************/
 #ifndef CLOCL_REG_H
 #define CLOCK_REG_H

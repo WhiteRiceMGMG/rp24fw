@@ -3,7 +3,7 @@
 /* object    | PLLレジスタアドレス                      */
 /* abstract  | rp24専用PLLアドレス                      */
 /* edit his  | 2026/01/24 新規作成                      */
-/*           |                                          */
+/*           | reset_hdrで使用                          */
 /********************************************************/
 #ifndef XOCS_REG_H
 #define XOCS_REG_H

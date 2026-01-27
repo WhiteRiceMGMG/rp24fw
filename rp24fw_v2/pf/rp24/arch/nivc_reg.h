@@ -3,7 +3,7 @@
 /* object    | NIVCレジスタ定義                         */
 /* abstract  | rp24専用NIVCレジスタ定義                 */
 /* edit his  | 2026/01/25 新規作成                      */
-/*           |                                          */
+/*           | reset_hdrで主に使用                      */
 /********************************************************/
 #ifndef NIVC_REG_H
 #define NIVC_REG_H

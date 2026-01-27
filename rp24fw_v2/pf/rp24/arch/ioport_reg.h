@@ -3,7 +3,7 @@
 /* object    | IOPORTレジスタアドレス                   */
 /* abstract  | rp24専用IOPORTアドレス                   */
 /* edit his  | 2026/01/25 新規作成                      */
-/*           |                                          */
+/*           | in_w，out_wなどで使用                    */
 /********************************************************/
 #ifndef IOPORT_REG_H
 #define IOPORT_REG_H

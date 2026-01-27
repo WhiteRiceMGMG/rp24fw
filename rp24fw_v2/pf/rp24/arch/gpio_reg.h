@@ -3,7 +3,7 @@
 /* object    | GPIOレジスタアドレス                     */
 /* abstract  | rp24専用GPIOアドレス                     */
 /* edit his  | 2026/01/24 新規作成                      */
-/*           |                                          */
+/*           | usermainで主に使用                       */
 /********************************************************/
 #ifndef GPIO_REG_H
 #define GPIO_REG_H
