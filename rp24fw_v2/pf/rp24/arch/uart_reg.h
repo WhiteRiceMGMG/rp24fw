@@ -3,7 +3,7 @@
 /* object    | UARTレジスタアドレス                     */
 /* abstract  | rp24専用UARTアドレス                     */
 /* edit his  | 2026/01/24 新規作成                      */
-/*           |                                          */
+/*           | syslibで使用                             */
 /********************************************************/
 #ifndef UART_REG_H
 #define UART_REG_H

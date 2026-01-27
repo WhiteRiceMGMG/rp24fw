@@ -3,7 +3,7 @@
 /* object    | systickレジスタアドレス                  */
 /* abstract  | rp24専用sistickアドレス                  */
 /* edit his  | 2026/01/25 新規作成                      */
-/*           |                                          */
+/*           | reset_hdrで主に使用                      */
 /********************************************************/
 #ifndef SYSTICK_REG_H
 #define SYSTICK_REG_H

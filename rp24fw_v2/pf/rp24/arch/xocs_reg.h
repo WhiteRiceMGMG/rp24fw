@@ -3,7 +3,7 @@
 /* object    | XOCSレジスタアドレス                     */
 /* abstract  | rp24専用XOCSアドレス                     */
 /* edit his  | 2026/01/24 新規作成                      */
-/*           |                                          */
+/*           | reset_hdrで主に使用                      */
 /********************************************************/
 #ifndef XOCS_REG_H
 #define XOCS_REG_H
