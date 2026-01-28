@@ -139,7 +139,7 @@ int usermain(void)
     /* イベントフラグの生成*/
     flgid = tk_cre_flg(&cflg);
 
-    /* セマフォの生成 */T_CTSK
+    /* セマフォの生成 */
     semid = tk_cre_sem(&csem);
 
     /* ボタン検出タスクの生成、実行 */

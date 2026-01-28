@@ -67,6 +67,39 @@ upボタン，downボタンの入力でモードを遷移する．
 アクセルで回転数アップ，ブレーキで回転数ダウン
 ボタン押下と回転数の関係は別途構想予定．
 
+250128 usermain()関数から見ていく．
+flgid = tk_cre_flg(&cflg)
+T_CFLG cflg =
+{
+        .flgptn = TA_TFIFO | TA_WMUL,    // イベントフラグ属性
+        .iflgptn    = 0,     // イベントフラグ初期値
+}
+cflg構造体のポインタを引数として渡す．
+ID tk_cre_flg( const T_CFLG *pk_cflg )
+{
+    ID   flgid;   |flgid宣言
+    UINT intsts;  |intsts宣言
+    DI(intsts);   |割禁
+    for(flgid = 0; flgcb_tbl[flgid].state |  FLGCB flgcb_tbl[CNF_MAX_FLGID];の配列
+        != KS_NONEXIST; flgid++)          |  KS_NONEXISTじゃない間は配列増やす
+    { 
+        ;
+    }
+    if(flgid < CNF_MAX_FLGID)         
+    {
+        flgcb_tbl[flgid].state = KS_EXIST;  フラグ情報を存在に
+        flgcb_tbl[flgid].flgptn = pk_cflg -> iflgptn; 
+        flgid++;
+    }
+    else
+    {
+        flgid = E_LIMIT;
+    }
+    EI(intsts);
+    return flgid;
+}
+
+
 
 /********************************************************/
 /* EOF                                                  */
