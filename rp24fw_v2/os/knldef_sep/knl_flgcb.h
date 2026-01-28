@@ -3,7 +3,7 @@
 /* object    | イベントフラグ制御                       */
 /* abstract  | イベントフラグ定義                       */
 /* edit his  | 2026/01/26 新規作成                      */
-/*           |                                          */
+/*           | eventflag.cで使用                        */
 /********************************************************/
 #ifndef KNL_FLGCB_H
 #define KNL_FLGCB_H

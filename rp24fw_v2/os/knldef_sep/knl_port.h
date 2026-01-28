@@ -3,6 +3,7 @@
 /* object    | MCU依存部分離                            */
 /* abstract  | MCU依存部分                              */
 /* edit his  | 2026/01/26 新規作成                      */
+/*           | scheduler vector_tblで使用               */
 /*           |                                          */
 /********************************************************/
 #ifndef KNL_PORT_H

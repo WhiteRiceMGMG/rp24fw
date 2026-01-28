@@ -28,7 +28,9 @@ T_CSEM  csem = {
 /* ボタン検出タスク生成情報 */
 u4  tskstk_btn[1024/sizeof(u4)];    // ボタン検出タスクのスタック
 ID  tskid_btn;                      // ボタン検出タスクのID番号
+
 void task_btn(INT stacd, void *exinf);
+
 T_CTSK  ctsk_btn = {
     .tskatr     = TA_HLNG | TA_RNG3 | TA_USERBUF,   // タスク属性
     .task       = task_btn,
@@ -137,7 +139,7 @@ int usermain(void)
     /* イベントフラグの生成*/
     flgid = tk_cre_flg(&cflg);
 
-    /* セマフォの生成 */
+    /* セマフォの生成 */T_CTSK
     semid = tk_cre_sem(&csem);
 
     /* ボタン検出タスクの生成、実行 */
