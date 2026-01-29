@@ -99,6 +99,27 @@ ID tk_cre_flg( const T_CFLG *pk_cflg )
     return flgid;
 }
 
+tk_cre_sem
+ID tk_cre_sem( const T_CSEM *pk_csem )
+{
+    ID      semid;
+    UINT    intsts;
+
+    DI(intsts);     // 割込み禁止
+    for(semid = 0; semcb_tbl[semid].state != KS_NONEXIST; semid++); セット可能まで進む
+
+    if(semid < CNF_MAX_SEMID) {
+        /* セマフォ管理情報の初期化 */
+        semcb_tbl[semid].state  = KS_EXIST;
+        semcb_tbl[semid].semcnt = pk_csem->isemcnt;
+        semcb_tbl[semid].maxsem = pk_csem->maxsem;
+        semid++;
+    } else {
+        semid = E_LIMIT;
+    }
+    EI(intsts);      // 割込み許可
+    return semid;
+}
 
 
 /********************************************************/
