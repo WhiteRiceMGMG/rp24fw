@@ -121,7 +121,14 @@ ID tk_cre_sem( const T_CSEM *pk_csem )
     return semid;
 }
 
-
+T_CTSK  ctsk_btn = {
+    .tskatr     = TA_HLNG | TA_RNG3 | TA_USERBUF,   // タスク属性
+    .task       = task_btn,
+    .itskpri    = 10,
+    .stksz      = 1024,
+    .bufptr     = tskstk_btn,
+};
+C99からの書き方？型宣言初期化してる？
 /********************************************************/
 /* EOF                                                  */
 /********************************************************/
