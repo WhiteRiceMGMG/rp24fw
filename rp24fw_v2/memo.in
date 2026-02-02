@@ -67,3 +67,5 @@ upボタン，downボタンの入力でモードを遷移する．
 アクセルで回転数アップ，ブレーキで回転数ダウン
 ボタン押下と回転数の関係は別途構想予定．
 
+RESET -> main) -> initsk() -> usermain() -> tk_ext_tsk()
+-> scheduler() -> task_btn, task_led1, task_led2
