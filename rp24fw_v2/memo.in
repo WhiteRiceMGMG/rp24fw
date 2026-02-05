@@ -70,3 +70,4 @@ upボタン，downボタンの入力でモードを遷移する．
 RESET -> main() -> initsk() -> usermain() -> tk_ext_tsk()
 -> scheduler() -> task_btn, task_led1, task_led2
 
+ios...????
