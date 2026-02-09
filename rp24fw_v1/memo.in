@@ -61,3 +61,8 @@ upボタン，downボタンの入力でモードを遷移する．
 make ios
 
 swiftUI Viewプロトコル
+
+標準ライブラリ機能→ボタン
+VStack, HStack, ZStack
+var body : some Viewっつうのは・・・
+
