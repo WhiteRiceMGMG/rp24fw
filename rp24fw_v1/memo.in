@@ -66,3 +66,15 @@ swiftUI Viewプロトコル
 VStack, HStack, ZStack
 var body : some Viewっつうのは・・・
 
+struct ContentView: View {
+        var body: some View {
+            Image("gu")
+        }
+}
+
+struct -> 複数の値をまとめて管理できる構造体．
+ContentView -> structにつけられた名前．Viewプロトコル準拠してなんらかのビューを返すbodyというプロパティが必要．
+View -> デフォルトで様々なモディファイアが用意されているプロトコル．
+var -> 変数を表すキーワード．変数名の前に記述する．
+body -> 変数名．
+some -> someは型．不透明な戻り地の方．プロパティや関数の具体的な戻り値を隠すことができる．
